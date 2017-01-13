@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 import os
 import shutil
-from distutils.core import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 if not os.path.exists('scripts'):
     os.makedirs('scripts')
