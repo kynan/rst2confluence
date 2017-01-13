@@ -727,7 +727,10 @@ http://confluence.atlassian.com/display/DOC/Confluence+Notation+Guide+Overview
 
     def visit_field_name(self, node):
         self.element_level += 1
-        self._add("||")
+        self._add("||{{")
+
+    def depart_field_name(self, node):
+        self._add("}}")
 
     def depart_field_name(self, node):
         self.element_level += 1
